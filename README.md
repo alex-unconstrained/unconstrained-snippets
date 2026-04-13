@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UnconstrainED Snippets
 
-## Getting Started
+A brand-aligned code snippet and prompt sharing tool for [UnconstrainED](https://unconstrained.dev) courses. Instructors add snippets as JSON files, students access them via shareable links and copy with one click.
 
-First, run the development server:
+**Live:** https://unconstrained-snippets.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Adding a Code Snippet
+
+Create a JSON file in the `/snippets/` directory:
+
+```json
+{
+  "title": "Auto Grade Setup",
+  "description": "Paste this into your Google Apps Script editor to enable automatic grading.",
+  "language": "javascript",
+  "code": "function onFormSubmit(e) {\n  const sheet = SpreadsheetApp.getActiveSpreadsheet();\n  // ...\n}"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Push to GitHub. Vercel auto-deploys in ~30 seconds. The snippet is live at `unconstrained-snippets.vercel.app/{filename}`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Snippet Fields
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Field         | Type   | Required | Notes                                              |
+|---------------|--------|----------|----------------------------------------------------|
+| `title`       | string | Yes      | Displayed as page heading (renders uppercase)       |
+| `description` | string | No       | Context shown above the code block                  |
+| `language`    | string | Yes      | `"javascript"` for code, `"prompt"` for LLM prompts |
+| `code`        | string | Yes      | The raw content. Use `\n` for newlines, `\"` for quotes |
 
-## Learn More
+### File Naming
 
-To learn more about Next.js, take a look at the following resources:
+- Use kebab-case: `auto-grade-setup.json`
+- The filename (minus `.json`) becomes the URL slug: `/auto-grade-setup`
+- Keep names short and descriptive
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding a Prompt Snippet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For LLM prompts with user-editable sections, set `"language": "prompt"` and use `{{placeholder}}` syntax:
 
-## Deploy on Vercel
+```json
+{
+  "title": "Data Analysis Prompt",
+  "description": "Replace the highlighted sections with your own content before pasting into ChatGPT or Claude.",
+  "language": "prompt",
+  "code": "You are an expert data analyst.\n\n## Context\nI'm working on {{describe your project}} and I have data from {{your data source}}.\n\n## The Data\n{{paste your data here}}"
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Placeholders render as highlighted orange pills on the page so students know what to replace. When copied, placeholders are included as raw `{{text}}` for easy find-and-replace.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## URL Structure
+
+| URL | Page |
+|-----|------|
+| `/` | Landing page listing all snippets |
+| `/{snippet-name}` | Individual snippet page |
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000.
+
+## Project Structure
+
+```
+/snippets/              -- Snippet JSON files (one per snippet)
+/app/
+  layout.tsx            -- Root layout with brand fonts + metadata
+  page.tsx              -- Landing page listing all snippets
+  [id]/page.tsx         -- Snippet view page (dynamic route)
+/lib/
+  snippets.ts           -- Load and parse snippet JSON files
+  highlight.ts          -- Shiki syntax highlighter with brand theme
+/components/
+  CodeBlock.tsx          -- Syntax-highlighted code + copy button
+  PromptBlock.tsx        -- Prompt text with placeholder highlighting + copy
+  SnippetCard.tsx        -- Card for landing page list
+  Header.tsx             -- Shared branding header
+/docs/
+  unconstrained-design-system.md  -- Brand design system reference
+```
+
+## Tech Stack
+
+- **Next.js 15** (App Router) -- static generation via `generateStaticParams`
+- **Tailwind CSS v4** -- brand tokens as CSS variables
+- **Shiki** -- build-time syntax highlighting with custom brand theme
+- **TypeScript**
+- **Vercel** -- auto-deploys on push
+
+## Deployment
+
+The site auto-deploys to Vercel when you push to the `master` branch. No manual deployment steps required.
+
+To deploy manually:
+```bash
+npx vercel --prod
+```
+
+## Design System
+
+See `docs/unconstrained-design-system.md` for the full brand reference (colors, typography, component patterns, Tailwind config, Shiki theme). Use this when building other UnconstrainED tools to maintain visual consistency.
