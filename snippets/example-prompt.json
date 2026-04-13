@@ -1,0 +1,6 @@
+{
+  "title": "Data Analysis Prompt",
+  "description": "Copy this prompt and replace the highlighted sections with your own content before pasting into ChatGPT or Claude.",
+  "language": "prompt",
+  "code": "You are an expert data analyst. I'm going to share a dataset with you and I need your help analyzing it.\n\n## Context\nI'm working on {{describe your project or research goal}} and I have data from {{where the data came from, e.g. a survey, database export, API}}.\n\n## The Data\n{{paste your data here — CSV, table, or raw text}}\n\n## What I Need\n1. Identify the top 3 trends or patterns in this data\n2. Flag any outliers or anomalies that seem unusual\n3. Create a summary table of {{the key metrics you care about, e.g. averages, totals, percentages}}\n4. Suggest 2-3 follow-up questions I should investigate\n\n## Format\nPresent your findings as:\n- A brief executive summary (2-3 sentences)\n- Detailed analysis with section headers\n- The summary table in markdown format\n- Follow-up questions as a numbered list"
+}
