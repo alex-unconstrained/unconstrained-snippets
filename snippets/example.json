@@ -1,0 +1,6 @@
+{
+  "title": "Auto Grade Setup",
+  "description": "Paste this into your Google Apps Script editor to enable automatic grading when a form is submitted.",
+  "language": "javascript",
+  "code": "function onFormSubmit(e) {\n  const sheet = SpreadsheetApp.getActiveSpreadsheet();\n  const responses = sheet.getSheetByName(\"Responses\");\n  const lastRow = responses.getLastRow();\n\n  // Get the submitted answers\n  const answers = responses.getRange(lastRow, 2, 1, 5).getValues()[0];\n\n  // Grade against answer key\n  const score = gradeSubmission(answers);\n  responses.getRange(lastRow, 7).setValue(score);\n}"
+}
