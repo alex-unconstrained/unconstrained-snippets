@@ -1,26 +1,38 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&family=Anaheim&family=JetBrains+Mono:wght@400;500&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-brand-50: #FFFAF0;
+  --color-brand-100: #FEF3E0;
+  --color-brand-200: #FDE8BF;
+  --color-brand-300: #FDD48E;
+  --color-brand-400: #FBBC5E;
+  --color-brand-500: #F5A623;
+  --color-brand-600: #E07428;
+  --color-brand-700: #C5392C;
+  --color-brand-800: #7C3412;
+  --color-brand-900: #3D1A00;
+  --color-brand-950: #1A0A00;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface-50: #F7F8FB;
+  --color-surface-100: #EEF0F6;
+  --color-surface-200: #DDE1EC;
+  --color-surface-300: #B4BDD1;
+  --color-surface-400: #959EB4;
+  --color-surface-500: #737F99;
+  --color-surface-600: #3D4663;
+  --color-surface-700: #252E47;
+  --color-surface-800: #1A1C28;
+  --color-surface-900: #111219;
+  --color-surface-950: #0A0B14;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-heading: "Staatliches", sans-serif;
+  --font-body: "Anaheim", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-surface-900);
+  color: var(--color-surface-300);
 }
