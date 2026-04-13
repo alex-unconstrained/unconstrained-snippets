@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --turbopack --yes)",
+      "Bash(npx create-next-app@latest temp-init --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --turbopack --yes)",
+      "Bash(cp -r temp-init/* temp-init/.* .)",
+      "Bash(rm -rf temp-init/.git)",
+      "Bash(rm -rf temp-init)",
+      "Bash(mv temp-init/package.json temp-init/package-lock.json temp-init/postcss.config.mjs temp-init/tsconfig.json .)",
+      "Bash(cp -r temp-init/public .)",
+      "Bash(npm install:*)",
+      "Bash(timeout 10 npm run dev)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
