@@ -43,6 +43,30 @@ describe("validateSnippetData", () => {
     ).toThrow('snippets/a.json: course "nope" has no matching file in /courses/');
   });
 
+  it("accepts a valid video field", () => {
+    const withVideo = {
+      ...valid,
+      video: { url: "/videos/a.mp4", poster: "/p.png", aspect: "16:9" },
+    };
+    expect(validateSnippetData("snippets/a.json", withVideo, COURSES)).toEqual(withVideo);
+  });
+
+  it("rejects video without url", () => {
+    expect(() =>
+      validateSnippetData("snippets/a.json", { ...valid, video: {} }, COURSES)
+    ).toThrow('snippets/a.json: missing required field "video.url"');
+  });
+
+  it("rejects invalid video aspect", () => {
+    expect(() =>
+      validateSnippetData(
+        "snippets/a.json",
+        { ...valid, video: { url: "/v.mp4", aspect: "4:3" } },
+        COURSES
+      )
+    ).toThrow('snippets/a.json: field "video.aspect" must be one of 16:9, 9:16, 1:1');
+  });
+
   it("rejects non-object data", () => {
     expect(() => validateSnippetData("snippets/a.json", [], COURSES)).toThrow(
       "snippets/a.json: must be a JSON object"

@@ -1,3 +1,9 @@
+export interface VideoData {
+  url: string;
+  poster?: string;
+  aspect?: "16:9" | "9:16" | "1:1";
+}
+
 export interface SnippetData {
   title: string;
   description?: string;
@@ -5,6 +11,7 @@ export interface SnippetData {
   course?: string;
   order?: number;
   code: string;
+  video?: VideoData;
 }
 
 export interface CourseData {
@@ -38,6 +45,31 @@ function checkField(
   }
 }
 
+const VIDEO_ASPECTS = ["16:9", "9:16", "1:1"];
+
+function checkVideo(filename: string, obj: Record<string, unknown>): void {
+  const video = obj.video;
+  if (video === undefined) return;
+  if (typeof video !== "object" || video === null || Array.isArray(video)) {
+    throw new Error(`${filename}: field "video" must be an object`);
+  }
+  const v = video as Record<string, unknown>;
+  if (v.url === undefined) {
+    throw new Error(`${filename}: missing required field "video.url"`);
+  }
+  if (typeof v.url !== "string") {
+    throw new Error(`${filename}: field "video.url" must be a string`);
+  }
+  if (v.poster !== undefined && typeof v.poster !== "string") {
+    throw new Error(`${filename}: field "video.poster" must be a string`);
+  }
+  if (v.aspect !== undefined && !VIDEO_ASPECTS.includes(v.aspect as string)) {
+    throw new Error(
+      `${filename}: field "video.aspect" must be one of ${VIDEO_ASPECTS.join(", ")}`
+    );
+  }
+}
+
 export function parseJsonFile(filename: string, raw: string): unknown {
   try {
     return JSON.parse(raw);
@@ -63,6 +95,7 @@ export function validateSnippetData(
       `${filename}: course "${obj.course}" has no matching file in /courses/`
     );
   }
+  checkVideo(filename, obj);
   return obj as unknown as SnippetData;
 }
 
