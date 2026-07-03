@@ -6,6 +6,8 @@ import PromptBlock from "@/components/PromptBlock";
 import DemoVideoBlock from "@/components/DemoVideoBlock";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import QrToggle from "@/components/QrToggle";
+import { qrCodeSvg, SITE_URL } from "@/lib/qr";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -38,9 +40,12 @@ export default async function SnippetPage({ params }: PageProps) {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
-        <h1 className="font-heading text-3xl text-white tracking-wide mb-2">
-          {snippet.title.toUpperCase()}
-        </h1>
+        <div className="flex items-start justify-between gap-4 mb-2">
+          <h1 className="font-heading text-3xl text-white tracking-wide">
+            {snippet.title.toUpperCase()}
+          </h1>
+          <QrToggle svg={await qrCodeSvg(`/${snippet.id}`)} url={`${SITE_URL}/${snippet.id}`} />
+        </div>
         {snippet.description && (
           <p className="text-surface-400 mb-8 leading-relaxed">
             {snippet.description}
