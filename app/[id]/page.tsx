@@ -5,6 +5,7 @@ import CodeBlock from "@/components/CodeBlock";
 import PromptBlock from "@/components/PromptBlock";
 import DemoVideoBlock from "@/components/DemoVideoBlock";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -36,7 +37,7 @@ export default async function SnippetPage({ params }: PageProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 max-w-3xl w-full mx-auto px-6 py-10">
+      <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
         <h1 className="font-heading text-3xl text-white tracking-wide mb-2">
           {snippet.title.toUpperCase()}
         </h1>
@@ -56,14 +57,7 @@ export default async function SnippetPage({ params }: PageProps) {
           />
         )}
       </main>
-      <footer className="py-6 text-center border-t border-surface-700">
-        <a
-          href="https://unconstrained.dev"
-          className="text-surface-600 text-xs tracking-wide hover:text-surface-400 transition-colors"
-        >
-          unconstrained.dev
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
