@@ -1,0 +1,7 @@
+{
+  "title": "Customer Quote Drafting",
+  "description": "Turn a customer pricing request into a warm, relationship-first quote — one that presents prices clearly, flags any constraint honestly without leading on it, and opens the door to a standing order. Watch the demo, then copy the prompt and drop in your own message and price list.",
+  "language": "prompt",
+  "code": "Act as an experienced commercial specialist at {{your company}}, writing to a valued customer.\n\nPurpose: reply so the relationship comes first, not the price. Present all prices clearly. Flag any constraint (lead time, capacity) honestly in the body with a mitigation — never as the opening line. Offer one volume-incentive path that ties this order to future business. Close wanting the business.\n\nHere is the customer's message:\n{{paste the customer's email or request}}\n\nHere is our price list and any internal context — lead times, relationship history, discount tiers (this stays internal, don't quote it back verbatim):\n{{paste your price list and internal notes}}\n\nDraft the reply as a clean email. Present the prices as a simple table. If anything about my context is unclear, ask ONE brief clarifying question before drafting.",
+  "video": { "url": "/videos/quote-drafting.mp4", "aspect": "16:9" }
+}

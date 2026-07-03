@@ -3,6 +3,7 @@ import { getAllSnippets, getSnippetById } from "@/lib/snippets";
 import { highlightCode } from "@/lib/highlight";
 import CodeBlock from "@/components/CodeBlock";
 import PromptBlock from "@/components/PromptBlock";
+import DemoVideoBlock from "@/components/DemoVideoBlock";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 
@@ -44,6 +45,7 @@ export default async function SnippetPage({ params }: PageProps) {
             {snippet.description}
           </p>
         )}
+        {snippet.video && <DemoVideoBlock {...snippet.video} />}
         {isPrompt ? (
           <PromptBlock code={snippet.code} />
         ) : (
