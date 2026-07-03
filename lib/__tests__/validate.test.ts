@@ -25,7 +25,7 @@ describe("validateSnippetData", () => {
   });
 
   it("rejects missing required field with filename and field name", () => {
-    const { title: _title, ...noTitle } = valid;
+    const noTitle = { language: valid.language, code: valid.code };
     expect(() => validateSnippetData("snippets/a.json", noTitle, COURSES)).toThrow(
       'snippets/a.json: missing required field "title"'
     );

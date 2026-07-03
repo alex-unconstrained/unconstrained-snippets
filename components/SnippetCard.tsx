@@ -15,7 +15,11 @@ export default function SnippetCard({ snippet }: { snippet: Snippet }) {
           {snippet.description}
         </p>
       )}
-      <span className="inline-block mt-3 text-xs text-surface-500 uppercase tracking-widest">
+      <span
+        className={`inline-block mt-3 text-xs uppercase tracking-widest ${
+          snippet.language === "prompt" ? "text-brand-500/70" : "text-surface-500"
+        }`}
+      >
         {snippet.language}
       </span>
     </Link>

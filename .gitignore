@@ -45,3 +45,6 @@ next-env.d.ts
 docs/superpowers/
 
 .vercel
+
+# Playwright MCP debug artifacts
+.playwright-mcp/
