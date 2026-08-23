@@ -11,7 +11,11 @@
       "Bash(cp -r temp-init/public .)",
       "Bash(npm install:*)",
       "Bash(timeout 10 npm run dev)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'docs: add course-ready design spec *)",
+      "Bash(npm test *)",
+      "Bash(git commit --quiet -m 'feat: add build-time snippet/course validation with vitest *)"
     ]
   }
 }
