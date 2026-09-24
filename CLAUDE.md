@@ -57,6 +57,10 @@ Full reference in `docs/unconstrained-design-system.md`. Key points:
 - Fonts: Staatliches (headings), Anaheim (body), JetBrains Mono (code)
 - All colors defined as Tailwind v4 `@theme` tokens in `app/globals.css`
 
+## Client Proposals (`/a/<slug>`)
+
+Unlisted client proposals are static folders in `public/a/<slug>/`. Each has a rewrite and noindex headers in `next.config.ts`. Any other `/a/<slug>` is proxied from the private UC publisher (`app/a/[artifact]/[[...asset]]/route.ts`, needs `UC_DELIVERY_SECRET`). Interactive proposals use the template in `templates/proposal/` (see its README).
+
 ## Common Tasks
 
 - **Add a snippet:** Create JSON in `/snippets/`, push
