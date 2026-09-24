@@ -18,6 +18,8 @@ Interactive client proposals served from `/a/<slug>` on the snippets site. First
 | Journey | `[data-journey]` with `role=tab` buttons and `role=tabpanel` panels | Set `--cols` on `.track` so column widths match phase length. |
 | Scripted demo | `[data-demo]`, question buttons with `data-q`, `<template data-a>` answers | Always label it "Illustrative demo · sample content". |
 | Reaction bar | an empty `<div data-react="chapter-id" class="react">` | Sends to `PROPOSAL.feedbackEndpoint` if set, otherwise opens a pre-filled email to `PROPOSAL.contacts`. |
+| Feature panel | `.outward` (two-column panel inside a chapter) | Use for one big idea that sits beside the main flow. |
+| Investment | `.invest` with `.fee` rows and `.fee.total` | Label indicative pricing as indicative. |
 | Internal notes | `details.review` | Remove before the client sees it. It's also hidden when printed. |
 | Gaps | `span.todo` | Dashed amber highlight for anything still to fill in. |
 

@@ -163,3 +163,15 @@ footer.foot{border-top:1px solid var(--uc-border);padding:28px 0 48px;color:var(
 .dir-ask small{display:block;margin-top:6px;color:#A8B3CA}
 .chapter.paper{--uc-text:#171C29;--uc-panel:#FFFEFB;--uc-control-border:#7C7C80}
 @media(max-width:560px){.compare .binder,.compare .dir-card{width:64%}.dir-ask{width:52%;right:4%;bottom:4%}}
+/* feature split inside a chapter (e.g. "Looking outward") */
+.outward{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,6vw,80px);margin-top:56px;padding:clamp(24px,4vw,40px);border-radius:18px;border:1px solid var(--uc-border);background:var(--uc-panel)}
+.outward h3.display{font-size:clamp(32px,4vw,44px);font-weight:400;line-height:1;margin:0}
+.outward p{max-width:640px}
+/* investment */
+.invest{border-top:1px solid var(--uc-border)}
+.fee{display:grid;grid-template-columns:1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--uc-border)}
+.fee small{display:block;color:var(--uc-muted);font-size:15px;margin-top:2px}.fee b{white-space:nowrap;font-size:20px}
+.fee.total strong{font-size:20px}.fee.total b{font-family:var(--uc-font-display);font-weight:400;font-size:clamp(36px,5vw,52px);line-height:1;color:var(--uc-accent)}
+@media(max-width:860px){.outward{grid-template-columns:1fr;gap:16px}}
+.pull p.q{color:var(--uc-text)}
+.paper .pull{background:#F9E9CF;border-color:#B27A3D}.paper .pull p.q{color:#171C29}
