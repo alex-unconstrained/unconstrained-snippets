@@ -12,7 +12,7 @@ Interactive client proposals served from `/a/<slug>` on the snippets site. First
 
 | Component | Markup hook | Notes |
 |---|---|---|
-| Hero | `.hero` + `.hero-art` | Put a real client photo or a drawn SVG in `.hero-art`. Never use AI renders of the client. |
+| Hero | `.hero` + `.hero-art` | Use a drawn SVG in `.hero-art` (e.g. the route map). No client photos and no AI renders of the client. |
 | Chapter | `section.chapter` (dark) / `section.chapter.paper` (warm paper) | Alternate the two for rhythm. |
 | Before/after slider | `[data-compare]` with `.side.before`, `.side.after`, a range input and `.handle` | Keep the same footprint on both sides so the split cuts one object. |
 | Journey | `[data-journey]` with `role=tab` buttons and `role=tabpanel` panels | Set `--cols` on `.track` so column widths match phase length. |
