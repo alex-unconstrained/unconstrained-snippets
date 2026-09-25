@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         source: "/a/charting-our-direction-v2-4f999d",
         destination: "/a/charting-our-direction-v2-4f999d/index.html",
       },
+      {
+        source: "/a/charting-our-direction-v3-c52878",
+        destination: "/a/charting-our-direction-v3-c52878/index.html",
+      },
     ];
   },
   async headers() {
@@ -49,6 +53,14 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/a/charting-our-direction-v2-4f999d/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+      {
+        source: "/a/charting-our-direction-v3-c52878/:path*",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
           { key: "X-Content-Type-Options", value: "nosniff" },
