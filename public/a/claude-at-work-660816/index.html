@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude at Work | Two-afternoon plan | UnconstrainED</title>
+<meta name="description" content="Claude at Work for Gavan S Porter Business Advisory: the 5.5-hour program split into two afternoons.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://unconstrained-snippets.vercel.app/a/claude-at-work-660816">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UnconstrainED">
+<meta property="og:title" content="Claude at Work | Two-afternoon plan">
+<meta property="og:description" content="The 5.5-hour program split into two afternoons, a week apart. Prepared by Alex Johnson, UnconstrainED.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Staatliches&family=Anaheim:wght@400..800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column; the two day-timelines are the spine, scope and dates follow. UnconstrainED brand, dark only by design. */
+:root {
+  --bg: #111219;
+  --panel: #1A1C28;
+  --line: #252E47;
+  --muted: #959EB4;
+  --fg: #DDE1EC;
+  --bright: #F7F8FB;
+  --accent: #F5A623;
+  --accent-deep: #E07428;
+  --accent-wash: #3D1A00;
+  --display: "Staatliches", "Impact", "Arial Narrow", sans-serif;
+  --body: "Anaheim", "Avenir Next", "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 1.0625rem; line-height: 1.55; }
+.wrap { max-width: 56rem; margin: 0 auto; padding-inline: 20px; padding-block: 28px 72px; display: grid; gap: 56px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--bright); font-weight: 700; }
+.brand img { width: 34px; height: 38px; object-fit: contain; }
+.brand span { color: var(--muted); font-weight: 400; }
+.top .when { font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--bright); letter-spacing: .02em; text-wrap: balance; margin: 0; line-height: 1.05; }
+h1 { font-size: clamp(2.6rem, 7vw, 4.2rem); }
+h1 span { color: var(--accent); }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.35rem; }
+p { margin: 0; max-width: 65ch; }
+strong { color: var(--bright); font-weight: 700; }
+.eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+section { display: grid; gap: 18px; }
+header.hero { display: grid; gap: 16px; }
+.meta { color: var(--muted); font-size: 1rem; }
+.status { justify-self: start; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent-deep); padding: 4px 10px; border-radius: 3px; }
+.lede { font-size: 1.2rem; }
+
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; border-block: 1px solid var(--line); padding-block: 18px; }
+.facts div { display: grid; gap: 2px; }
+.facts b { font-family: var(--display); font-weight: 400; font-size: 1.8rem; color: var(--bright); line-height: 1; }
+.facts span { font-size: .92rem; color: var(--muted); }
+@media (max-width: 680px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.arc { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; }
+.arc > div { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.arc .mid { background: transparent; border-style: dashed; border-color: var(--accent-deep); }
+.arc .arrow { background: none; border: 0; padding: 0; color: var(--accent); display: grid; place-items: center; font-family: var(--mono); }
+.arc .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.arc h3 { color: var(--accent); }
+.arc p { font-size: .98rem; }
+@media (max-width: 680px) { .arc { grid-template-columns: 1fr; } .arc .arrow { transform: rotate(90deg); } }
+
+.reasons { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
+.reasons li { display: grid; gap: 4px; align-content: start; border-top: 1px solid var(--line); padding-top: 12px; }
+@media (max-width: 680px) { .reasons { grid-template-columns: 1fr; } }
+
+.day-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; }
+.day-head .dur { font-family: var(--mono); font-size: .85rem; color: var(--muted); }
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.timeline li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 16px; padding: 14px 10px 14px 0; border-top: 1px solid var(--line); }
+.timeline .t { font-family: var(--mono); font-size: .82rem; color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.timeline .block { display: grid; gap: 4px; min-width: 0; }
+.timeline .row { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.timeline .name { font-weight: 700; color: var(--bright); font-size: 1.08rem; }
+.chip { font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 3px; padding: 1px 7px; white-space: nowrap; }
+.chip.new { color: var(--accent); border-color: var(--accent-deep); }
+.chip.g { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+.timeline li.core { background: linear-gradient(90deg, var(--accent-wash), transparent 75%); }
+.timeline li.brk .name { color: var(--muted); font-weight: 400; }
+@media (max-width: 520px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
+
+.week { background: var(--panel); border: 1px dashed var(--accent-deep); border-radius: 6px; padding: 20px; display: grid; gap: 12px; }
+.week ol { margin: 0; padding-left: 1.3rem; display: grid; gap: 6px; }
+.week li::marker { color: var(--accent); font-family: var(--mono); }
+
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .98rem; }
+th { text-align: left; font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 400; padding: 8px 10px; border-bottom: 1px solid var(--accent-deep); }
+td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.num { font-family: var(--mono); font-size: .85rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.total td { color: var(--bright); font-weight: 700; border-bottom: 0; }
+.flag { color: var(--accent); font-weight: 700; }
+
+.dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.date { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 6px; }
+.date .opt { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.date .d { font-family: var(--display); font-size: 1.5rem; color: var(--bright); }
+@media (max-width: 560px) { .dates { grid-template-columns: 1fr; } }
+.note { color: var(--muted); font-size: .98rem; }
+
+.qs { list-style: none; margin: 0; padding: 0; display: grid; counter-reset: q; }
+.qs li { counter-increment: q; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: 12px; padding-block: 14px; border-top: 1px solid var(--line); }
+.qs li::before { content: counter(q); font-family: var(--display); font-size: 1.6rem; color: var(--accent); line-height: 1; }
+footer { color: var(--muted); font-size: .92rem; border-top: 1px solid var(--line); padding-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+  <div class="brand"><img src="/a/claude-at-work-660816/mark.png" alt=""><span><strong>UnconstrainED</strong> / Gavan S Porter Business Advisory</span></div>
+  <span class="when">29 September 2026</span>
+</div>
+
+<header class="hero">
+  <div class="eyebrow">Prepared for Gavan Porter</div>
+  <h1>Claude at Work, <span>two afternoons</span></h1>
+  <p class="meta">Co-facilitated by Alex Johnson and Gavan Porter</p>
+  <span class="status">Draft for our call</span>
+  <p class="lede">The same 5.5-hour program, split into two afternoons a week apart, 2–6pm IST on weekdays. <strong>Day 1 makes the output trustworthy.</strong> <strong>Day 2 makes it repeatable.</strong> In the week between, each person runs one real process through Claude and logs how it goes, so the skill they build on Day 2 comes from their own work.</p>
+</header>
+
+<div class="facts">
+  <div><b>5.5 hrs</b><span>Same as agreed</span></div>
+  <div><b>2 × 2h45</b><span>Afternoons, a week apart</span></div>
+  <div><b>1 skill</b><span>Built by each person</span></div>
+  <div><b>USD 1,500</b><span>Flat fee, unchanged</span></div>
+</div>
+
+<section aria-labelledby="arc">
+  <h2 id="arc">The arc</h2>
+  <div class="arc">
+    <div><span class="label">Day 1 · 2h45</span><h3>Make it trustworthy</h3><p>Prompting, Projects, and a review routine so a 50% first pass becomes something to improve, not a reason to give up.</p></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="mid"><span class="label">The week · about 6 days</span><h3>Run it for real</h3><p>One repetitive process, at least three live runs, each one logged.</p></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div><span class="label">Day 2 · 2h45</span><h3>Make it repeatable</h3><p>Cowork, routines, and a skill built from that process as the capstone.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="why">
+  <h2 id="why">Why split it</h2>
+  <ul class="reasons">
+    <li><strong>It fits your window.</strong><span>5.5 hours won't fit a 2–6pm afternoon. 2h45 fits, with room to spare.</span></li>
+    <li><strong>It targets the real problem.</strong><span>People drop Claude when the first pass is wrong and go back to checking by hand. A week of logged runs shows where it's reliable and where a person needs to check.</span></li>
+    <li><strong>The capstone is real.</strong><span>Each skill comes from a process they've already run several times. Vidya's invoice-to-import-template mapping is the obvious first candidate.</span></li>
+    <li><strong>Two sessions of practice for you.</strong><span>You run a breakout on both days, which counts as two co-facilitation sessions toward your certification instead of one.</span></li>
+  </ul>
+</section>
+
+<section aria-labelledby="d1">
+  <div class="day-head"><h2 id="d1">Day 1 · Make it trustworthy</h2><span class="dur">2h45</span></div>
+  <ol class="timeline">
+    <li><span class="t">0:00–0:15</span><div class="block"><div class="row"><span class="name">Opening</span><span class="chip">Module 1</span><span class="chip g">Gavan</span></div><p>Each person names the one process they most want off their plate. Gavan explains why the business is doing this: AI working alongside people, not replacing them.</p></div></li>
+    <li><span class="t">0:15–1:00</span><div class="block"><div class="row"><span class="name">Prompting + Projects for finance work</span><span class="chip">Module 1</span></div><p>Set up a Claude Project holding the context they re-type every time (client templates, chart-of-accounts conventions, import formats) plus custom instructions. Prompt patterns that suit bookkeeping.</p></div></li>
+    <li class="core"><span class="t">1:00–1:40</span><div class="block"><div class="row"><span class="name">Keep going when it's 50% right</span><span class="chip">Module 1</span></div><p>The core block. Treat Claude like a new colleague: tell it what it got wrong and iterate. Add a second Claude pass that reviews the output before a person does, then spot-check a sample instead of redoing everything. Worked live on invoice-to-import mapping. Includes five minutes on client data and what stays out of prompts.</p></div></li>
+    <li class="brk"><span class="t">1:40–1:50</span><div class="block"><span class="name">Break</span></div></li>
+    <li><span class="t">1:50–2:30</span><div class="block"><div class="row"><span class="name">Artifacts, tracking sheets, Excel vs Copilot</span><span class="chip">Module 2</span></div><p>Agree one tracking-sheet format for the team and build it as an artifact. Then run the same task in Claude in Excel and in Copilot side by side, including for clients that only allow Copilot.</p></div></li>
+    <li><span class="t">2:30–2:45</span><div class="block"><div class="row"><span class="name">Set the week</span><span class="chip new">Bridge</span><span class="chip g">Gavan breakout</span></div><p>Each person commits to one process: at least three runs through Claude, the review routine every time, accuracy and time saved logged in the tracking sheet.</p></div></li>
+  </ol>
+</section>
+
+<section aria-labelledby="wk">
+  <div class="week">
+    <div class="eyebrow">Between the days · about a week</div>
+    <h3 id="wk">What each person does</h3>
+    <ol>
+      <li>Run their chosen process through the Day 1 Project at least three times on live work.</li>
+      <li>Log each run: how accurate it was, what went wrong, how long checking took, time saved.</li>
+      <li>Bring their best prompt and 2–3 real examples to Day 2, including at least one failure.</li>
+    </ol>
+    <p class="note">Optional: a 15-minute check-in mid-week from Alex or Gavan.</p>
+  </div>
+</section>
+
+<section aria-labelledby="d2">
+  <div class="day-head"><h2 id="d2">Day 2 · Make it repeatable</h2><span class="dur">2h45</span></div>
+  <ol class="timeline">
+    <li><span class="t">0:00–0:20</span><div class="block"><div class="row"><span class="name">What the week showed</span><span class="chip new">Bridge</span></div><p>Each person walks through their log: where Claude held up, where it broke, what the review caught.</p></div></li>
+    <li><span class="t">0:20–1:05</span><div class="block"><div class="row"><span class="name">Cowork + routines</span><span class="chip">Module 2</span></div><p>Hand off multi-step work in Cowork on their real files. Set up a routine that runs on a schedule, such as an end-of-day summary for Gavan of what changed across the team's tracking sheets, or a month-end checklist.</p></div></li>
+    <li class="brk"><span class="t">1:05–1:15</span><div class="block"><span class="name">Break</span></div></li>
+    <li class="core"><span class="t">1:15–2:15</span><div class="block"><div class="row"><span class="name">Capstone: build the skill</span><span class="chip">Module 3</span><span class="chip g">Gavan breakout</span></div><p>Each person turns their repetitive process into a skill, with the review step written in. Gavan runs one breakout room and Alex runs the other. Connectors only where they link to tools the team already uses.</p></div></li>
+    <li><span class="t">2:15–2:35</span><div class="block"><div class="row"><span class="name">Test + showcase</span><span class="chip">Module 3</span><span class="chip g">Gavan</span></div><p>Run each skill on a fresh real example and review it in front of the group. Gavan asks the sign-off question: would you send this to a client?</p></div></li>
+    <li><span class="t">2:35–2:45</span><div class="block"><div class="row"><span class="name">Close</span><span class="chip new">Bridge</span></div><p>Who owns each skill, the next process to automate, and a date for a check-in with Gavan (and Alex) about 30 days out.</p></div></li>
+  </ol>
+</section>
+
+<section aria-labelledby="asks">
+  <h2 id="asks">What you asked for on 20 Sep</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Your ask</th><th>Where</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Prompting and Projects</td><td class="num">D1 0:15</td><td>Covered</td></tr>
+      <tr><td>Turn a repetitive process into a skill</td><td class="num">D2 1:15</td><td>Covered, one skill each</td></tr>
+      <tr><td>Stop giving up at 50% and going back to manual checks</td><td class="num">D1 1:00 → D2 2:15</td><td>The problem the whole split is built around</td></tr>
+      <tr><td>Artifacts and better-structured reporting</td><td class="num">D1 1:50</td><td>Covered</td></tr>
+      <tr><td>Checklists and tracking sheets in one format</td><td class="num">D1 1:50 + week</td><td>Covered, and used as the logging tool</td></tr>
+      <tr><td>Claude in Excel vs Copilot</td><td class="num">D1 1:50</td><td>Covered</td></tr>
+      <tr><td>Routines and scheduled tasks</td><td class="num">D2 0:20</td><td>Covered</td></tr>
+      <tr><td>Materials to take away, plus accountability</td><td class="num">Week + D2 close</td><td>Covered by the logged week and the 30-day check-in</td></tr>
+      <tr><td>You co-facilitating a breakout</td><td class="num">D1 2:30 · D2 1:15</td><td>Covered, two sessions. Alex shares materials and runs a short prep call beforehand.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Ethics and integrity isn't in this program. Alex will cover it with you separately as part of your certification.</p>
+</section>
+
+<section aria-labelledby="map">
+  <h2 id="map">How it maps to the agreed program</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Module</th><th>Agreed</th><th>Split plan</th><th>What changed</th></tr></thead>
+    <tbody>
+      <tr><td>1 · Claude Foundations</td><td class="num">1h30</td><td class="num">1h40</td><td>Kept, with more time on reviewing and iterating.</td></tr>
+      <tr><td>2 · Cowork &amp; Artifacts</td><td class="num">2h30</td><td class="num">1h25</td><td>Shorter, to make room for Excel vs Copilot, tracking sheets and routines.</td></tr>
+      <tr><td>3 · Skills, Connectors &amp; Code</td><td class="num">1h30</td><td class="num">1h20</td><td>Skills become the capstone; connectors kept light. <span class="flag">Claude Code proposed out:</span> the team gets more from skills and routines right now. A 5-minute demo at most.</td></tr>
+      <tr><td>Bridge blocks</td><td class="num">—</td><td class="num">0h45</td><td>Setting the week, reviewing it, and the close.</td></tr>
+      <tr><td>Breaks</td><td class="num">—</td><td class="num">0h20</td><td>One per afternoon.</td></tr>
+      <tr class="total"><td>Total</td><td class="num">5h30</td><td class="num">5h30</td><td>Fee unchanged: USD 1,500 flat, up to 8 participants.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section aria-labelledby="dates">
+  <h2 id="dates">Candidate dates</h2>
+  <div class="dates">
+    <div class="date"><span class="opt">Option A</span><span class="d">Wed 7 Oct → Tue 13 Oct</span><span class="note">2–6pm IST both days</span></div>
+    <div class="date"><span class="opt">Option B</span><span class="d">Thu 8 Oct → Wed 14 Oct</span><span class="note">2–6pm IST both days</span></div>
+  </div>
+  <p class="note">Alex's weekday afternoons are open from 5 to 14 October, so other pairs in that range can work too. We'd like the participant list and the processes each person wants to work on a few days before Day 1, so the examples are ready.</p>
+</section>
+
+<section aria-labelledby="qs">
+  <h2 id="qs">To settle on our call</h2>
+  <ol class="qs">
+    <li><p><strong>Two afternoons instead of one day.</strong> Does the split work for you? The proposal describes a single day, so we'll note the change in writing.</p></li>
+    <li><p><strong>Dates.</strong> Option A, Option B, or another pair between 5 and 14 October? And does 2–6pm IST work at your end on both days?</p></li>
+    <li><p><strong>Participants.</strong> Who's in, and how are their names spelled? The fee covers up to 8.</p></li>
+    <li><p><strong>Processes.</strong> Is Vidya's invoice mapping the right first example? What would the others bring?</p></li>
+    <li><p><strong>Claude Code.</strong> Are you happy to drop it for this group?</p></li>
+    <li><p><strong>Your prep call.</strong> When should we go through the materials and your breakout before Day 1?</p></li>
+  </ol>
+</section>
+
+<footer><span>UnconstrainED / Alex Johnson</span><span>Reskill. Reclaim. Reinvest.</span></footer>
+
+</div>
+</body>
+</html>

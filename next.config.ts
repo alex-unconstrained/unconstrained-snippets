@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
         source: "/a/charting-our-direction-v3-c52878",
         destination: "/a/charting-our-direction-v3-c52878/index.html",
       },
+      {
+        source: "/a/claude-at-work-660816",
+        destination: "/a/claude-at-work-660816/index.html",
+      },
     ];
   },
   async headers() {
@@ -61,6 +65,14 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/a/charting-our-direction-v3-c52878/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+      {
+        source: "/a/claude-at-work-660816/:path*",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
           { key: "X-Content-Type-Options", value: "nosniff" },
