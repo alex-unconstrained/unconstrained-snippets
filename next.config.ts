@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
         source: "/a/claude-at-work-660816",
         destination: "/a/claude-at-work-660816/index.html",
       },
+      {
+        source: "/a/veracity-claude-at-work-ca5674",
+        destination: "/a/veracity-claude-at-work-ca5674/index.html",
+      },
     ];
   },
   async headers() {
@@ -73,6 +77,14 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/a/claude-at-work-660816/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+      {
+        source: "/a/veracity-claude-at-work-ca5674/:path*",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
           { key: "X-Content-Type-Options", value: "nosniff" },
